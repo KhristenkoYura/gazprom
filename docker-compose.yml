@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  gazprom:
+    image: gazprom
+    hostname: "{{.Service.Name}}"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.02'
+          memory: 256M
+        reservations:
+          cpus: '0.01'
+          memory: 32M
+    ports:
+      - "9080:8080"
